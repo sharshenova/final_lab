@@ -6,7 +6,7 @@
     {% for article in article_list %}
         <div class="card mt-3">
             <div class="card-header">
-                <h2 class="card-title card-text"><a href="{% url 'webapp:article_detail' article.pk %}" class="card-link">{{ article.title }}</a></h2>
+                <h1 class="card-title card-text"><a href="{% url 'webapp:article_detail' article.pk %}" class="card-link">{{ article.title }}</a></h1>
             </div>
             {% if article.image %}
                 <div class="card-body">
@@ -16,9 +16,11 @@
                 </div>
             {% endif %}
             <div class="card-footer">
-                <p class="card-text">{{ article.author }} | {{ article.created_at }} {% if user == article.author %}
-                    <a class="float-right" href="{% url 'webapp:article_update'  article.pk %}">Редактировать</a>
-                {% endif %}</p>
+                <p class="card-text">{{ article.author }} | {{ article.created_at }}
+                    {% if user == article.author %}
+                        <a class="float-right" href="{% url 'webapp:article_delete'  article.pk %}">Удалить</a>
+                        <a class="float-right mr-1" href="{% url 'webapp:article_update'  article.pk %}">Редактировать |</a>
+                    {% endif %}</p>
             </div>
         </div>
     {% endfor %}

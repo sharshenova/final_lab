@@ -19,3 +19,20 @@ class Article(models.Model):
     class Meta:
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
+
+
+class Comment(models.Model):
+    text = models.TextField(max_length=1000, null=True, blank=True, verbose_name="Текст комментария")
+    author = models.ForeignKey(User, blank=True, verbose_name="Автор", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now=True, verbose_name="Дата и время создания")
+    article = models.ForeignKey(Article, related_name="comments", blank=True, verbose_name="Статья", on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse('webapp:article_detail', kwargs={'pk': self.article.id})
+
+    def __str__(self):
+        return f"{self.pk}. {self.text} | {self.author.username}"
+
+    class Meta:
+        verbose_name = "Комментарий"
+        verbose_name_plural = "Комментарии"

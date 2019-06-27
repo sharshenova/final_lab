@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Статьи{% endblock %}
+
+{% block content %}
+    {% for article in article_list %}
+        <div class="card mt-3">
+            <div class="card-header">
+                <h2 class="card-title card-text"><a href="{% url 'webapp:article_detail' article.pk %}" class="card-link">{{ article.title }}</a></h2>
+            </div>
+            {% if article.image %}
+                <div class="card-body">
+                    <div class="img-wrapper">
+                        <img class="card-img w-50" src="{{ article.image.url }}" alt="{{ article.image.name }}">
+                    </div>
+                </div>
+            {% endif %}
+            <div class="card-footer">
+                <p class="card-text">{{ article.author }} | {{ article.created_at }} {% if user == article.author %}
+                    <a class="float-right" href="{% url 'webapp:article_update'  article.pk %}">Редактировать</a>
+                {% endif %}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,90 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$W0PXDFdBPGXD$AyF6ixrbVm0sUDqPbu6sq1ZFxyg0ZfzhUiKOSB5j4vQ=",
+    "last_login": "2019-06-26T21:27:55.952Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-06-26T12:05:05.428Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$120000$gME3PTL61XAG$UbEmhd0M/xJAvRyW4J+u6h/ggcKmzAu7t3Ft00RT4Ew=",
+    "last_login": "2019-06-26T21:54:56.386Z",
+    "is_superuser": true,
+    "username": "admin2",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-06-26T14:53:25.708Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 1,
+  "fields": {
+    "title": "\u0417\u0430\u0433\u043e\u043b\u043e\u0432\u043e\u043a",
+    "text": "\u0422\u0435\u0441\u0442 \u0422\u0435\u0441\u0442",
+    "author": [
+      "admin"
+    ],
+    "image": "article_images/1554812287173439788.jpg",
+    "created_at": "2019-06-26T21:26:55.892Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 2,
+  "fields": {
+    "title": "Test",
+    "text": "Test Test",
+    "author": [
+      "admin"
+    ],
+    "image": "article_images/imgbin-jigsaw-puzzles-font-awesome-computer-icons-tour-puzzle-sR5dxepCELx_FCV7eZb.jpg",
+    "created_at": "2019-06-26T14:26:31.280Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 7,
+  "fields": {
+    "title": "\u041f\u0443\u0441\u0442\u0430\u044f \u0441\u0442\u0430\u0442\u044c\u044f",
+    "text": "\u041d\u0438 \u043e \u0447\u0451\u043c",
+    "author": [
+      "admin"
+    ],
+    "image": "article_images/2_IQ3UoXb.png",
+    "created_at": "2019-06-26T21:26:18.271Z"
+  }
+},
+{
+  "model": "webapp.article",
+  "pk": 8,
+  "fields": {
+    "title": "\u0410\u0434\u043c\u0438\u043d 2",
+    "text": "\u0422\u043e\u0436\u0435 \u0430\u0434\u043c\u0438\u043d",
+    "author": [
+      "admin2"
+    ],
+    "image": "article_images/photo_2019-06-03_18-49-30.jpg",
+    "created_at": "2019-06-26T21:55:50.707Z"
+  }
+}
+]

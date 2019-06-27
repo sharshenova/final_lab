@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Статья{% endblock %}
+
+{% block content %}
+    <h1 class="mt-2">{{ article.title }}</h1>
+    <p>{{ article.author }} | {{ article.created_at }}
+        {% if user == article.author %}
+            <a class="float-right" href="{% url 'webapp:article_update' article.pk %}">Редактировать</a>
+        {% endif %}
+    </p>
+    {% if article.image %}
+        <div class="img-wrapper">
+            <img class="w-50" src="{{ article.image.url }}" alt="{{ article.image.name }}">
+        </div>
+    {% endif %}
+    <p class="mt-3 pre-spaces">{{ article.text }}</p>
+{% endblock %}

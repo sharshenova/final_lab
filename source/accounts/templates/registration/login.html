@@ -1,0 +1,41 @@
+{% load staticfiles %}
+{% load widget_tweaks %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center mt-3">Вход</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="text-center">
+            {% for error in form.non_field_errors %}<p class="text-danger mt-1">{{ error }}</p>{% endfor %}
+        </div>
+        <div class="form-group row">
+            <label for="{{ form.username.id_for_label }}" class="col-2 col-form-label">{{ form.username.label }}</label>
+            <div class="col-10">
+                {{ form.username|add_class:'form-control' }}
+                {% for error in form.username.errors %}<p class="text-danger mt-1">{{ error }}</p>{% endfor %}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="{{ form.password.id_for_label }}" class="col-2 col-form-label">{{ form.password.label }}</label>
+            <div class="col-10">
+                {{ form.password|add_class:'form-control' }}
+                {% for error in form.password.errors %}<p class="text-danger mt-1">{{ error }}</p>{% endfor %}
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Войти</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -75,7 +75,7 @@ class CommentUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView)
 
 
 class CommentListView(ListView):
-    template_name = 'comment_list.html'
+    template_name = 'partial/comment_list.html'
     model = Comment
 
 

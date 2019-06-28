@@ -15,8 +15,8 @@
             <img class="w-50" src="{{ article.image.url }}" alt="{{ article.image.name }}">
         </div>
     {% endif %}
-    <p class="mt-3 pre-spaces">{{ article.text }}</p>
-   {% include 'comment_list.html' with comment_list=article.comments.all %}
+    <p class="mt-3">{{ article.text }}</p>
+   {% include 'partial/comment_list.html' with comment_list=article.comments.all %}
     <form method="post" enctype="multipart/form-data" action="{% url 'webapp:comment_create' article.id %}">
         {% csrf_token %}
         {% include 'partial/comment_form.html' %}

@@ -6,12 +6,12 @@
   </div>
   <div class="form-group">
     <label for="title">{{ title.label }}</label>
-    <input type="text" class="form-control" name="title" id="title" placeholder="Заголовок">
+    <input type="text" class="form-control" name="title" id="title" value="{{ article.title }}" placeholder="Заголовок">
     {% for error in form.title.errors %}<p class="text-danger mt-1">{{ error }}</p>{% endfor %}
   </div>
   <div class="form-group">
     <label for="text">{{ text.label }}</label>
-     <input type="text" class="form-control" name="text" id="text" placeholder="Текст">
+     <input type="text" class="form-control" name="text" id="text" value="{{ article.text }}" placeholder="Текст">
     {% for error in form.text.errors %}<p class="text-danger mt-1">{{ error }}</p>{% endfor %}
   </div>
   <div class="form-group">
